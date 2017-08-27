@@ -1,5 +1,7 @@
 package com.sogl.springcore;
 
+import java.util.Arrays;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -16,7 +18,11 @@ public class Driver {
 		
 		logger.debug("Main method invoked");
 		ApplicationContext appCtx = new ClassPathXmlApplicationContext("classpath:springcore-context.xml");
+		
+		System.out.println(Arrays.toString(appCtx.getBeanDefinitionNames()));;
 		HelloWorld helloworld = appCtx.getBean(HelloWorld.class);
-		helloworld.sayHello();
+		helloworld.sayHelloToUser();;
+		
+		
 	}
 }

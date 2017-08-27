@@ -4,6 +4,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="helloworld" class="com.sogl.springcore.pojo.HelloWorld">
+		<property name="user" ref="user" />
 	</bean>
-	
+
+	<bean id="user" class="com.sogl.springcore.pojo.User">
+		<constructor-arg index="0" value="Sachin"></constructor-arg>
+	</bean>
+
 </beans>
