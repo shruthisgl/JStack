@@ -3,12 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="helloworld" class="com.sogl.springcore.pojo.HelloWorld">
-		<property name="user" ref="user" />
+	<bean id="helloworld" class="com.sogl.springcore.pojo.HelloWorld" autowire="byType">
 	</bean>
-
-	<bean id="user" class="com.sogl.springcore.pojo.User">
-		<constructor-arg index="0" value="Sachin"></constructor-arg>
+	
+	<bean id="user"  class="com.sogl.springcore.pojo.User" init-method="doInit" destroy-method="doDestroy">
+		<constructor-arg value="Sachin"></constructor-arg>
+		<constructor-arg value="Tendulkar"></constructor-arg>
+		<constructor-arg value="1"></constructor-arg>
 	</bean>
-
+	
+	<bean id="calendar" class="java.util.Calendar" factory-method="getInstance">
+	</bean>
 </beans>

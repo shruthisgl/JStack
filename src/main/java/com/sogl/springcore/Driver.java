@@ -1,6 +1,7 @@
 package com.sogl.springcore;
 
 import java.util.Arrays;
+import java.util.Calendar;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +9,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.sogl.springcore.pojo.HelloWorld;
+import com.sogl.springcore.pojo.User;
 
 public class Driver {
 	
@@ -21,8 +23,8 @@ public class Driver {
 		
 		System.out.println(Arrays.toString(appCtx.getBeanDefinitionNames()));;
 		HelloWorld helloworld = appCtx.getBean(HelloWorld.class);
+		Calendar calendar = appCtx.getBean(Calendar.class);
 		helloworld.sayHelloToUser();;
-		
-		
+		logger.info(calendar.getTime().toString());
 	}
 }

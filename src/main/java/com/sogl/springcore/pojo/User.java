@@ -6,10 +6,21 @@ public class User {
 	private String lastName;
 	private String surName;
 	private String nickName;
+	private Integer rollNo;
 
-	public User(String firstName) {
+	public User(String firstName, String lastName, Integer rollNo) {
 		super();
 		this.firstName = firstName;
+		this.lastName = lastName;
+		this.rollNo = rollNo;
+	}
+	
+	public void doInit() {
+		System.out.println("User ["+firstName+"] created.");
+	}
+	
+	public void doDestroy() {
+		System.out.println("User ["+firstName+"] dying......");
 	}
 
 	public String getFirstName() {
@@ -30,6 +41,16 @@ public class User {
 
 	public String getSurName() {
 		return surName;
+	}
+	
+	
+
+	public Integer getRollNo() {
+		return rollNo;
+	}
+
+	public void setRollNo(Integer rollNo) {
+		this.rollNo = rollNo;
 	}
 
 	public void setSurName(String surName) {
